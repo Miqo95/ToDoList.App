@@ -6,6 +6,16 @@ import "./Components.css";
 const TodoItem = ({ id, title }) => {
   const dispatch = useDispatch();
 
+  const editTask = () => {
+    document.getElementsByClassName("task-input")[0].value = title;
+    document.getElementsByClassName("task-button")[0].innerHTML = "Save";
+    dispatch(
+      deleteTask({
+        id: id,
+      })
+    );
+  };
+
   const removeTask = () => {
     dispatch(
       deleteTask({
@@ -18,6 +28,14 @@ const TodoItem = ({ id, title }) => {
     <li className="task-item">
       <div>{title}</div>
       <div>
+        <button
+          className="edit-task-button"
+          onClick={() => {
+            editTask();
+          }}
+        >
+          Edit
+        </button>
         <button
           className="remove-task-button"
           onClick={() => {

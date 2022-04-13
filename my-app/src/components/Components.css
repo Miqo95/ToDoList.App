@@ -41,6 +41,17 @@
   padding: 8px 40px;
 }
 
+.edit-task-button {
+  background-color: #0857a6;
+  margin-right: 5px;
+  height: 32px;
+  color: white;
+  border-radius: 4px;
+  width: 70px;
+  border: none;
+  cursor: pointer;
+}
+
 .remove-task-button {
   background-color: #ac3b61;
   height: 32px;
@@ -48,8 +59,5 @@
   border-radius: 4px;
   width: 70px;
   border: none;
-}
-
-.remove-task-button:hover {
   cursor: pointer;
 }

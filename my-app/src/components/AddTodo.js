@@ -10,9 +10,9 @@ const AddTodo = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-
+    document.getElementsByClassName("task-button")[0].innerHTML = "Add";
     if (value.trim().length === 0) {
-      alert("Enter a task before adding !!");
+      alert("Enter a new task !!");
       setValue("");
       return;
     }
@@ -37,7 +37,7 @@ const AddTodo = () => {
       ></input>
 
       <button className="task-button" onClick={onSubmit}>
-        Save
+        Add
       </button>
     </div>
   );

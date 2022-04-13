@@ -6,10 +6,13 @@ export const tasksSlice = createSlice({
   reducers: {
     addTask: (state, action) => {
       const newTask = {
-        id: new Date(),
+        id: Math.random(),
         name: action.payload.task,
       };
       state.push(newTask);
+    },
+    editTask: (state, action) => {
+      return state.filter((item) => item.id !== action.payload.id);
     },
     deleteTask: (state, action) => {
       return state.filter((item) => item.id !== action.payload.id);
@@ -17,6 +20,6 @@ export const tasksSlice = createSlice({
   },
 });
 
-export const { addTask, deleteTask } = tasksSlice.actions;
+export const { addTask, editTask, deleteTask } = tasksSlice.actions;
 
 export default tasksSlice.reducer;
